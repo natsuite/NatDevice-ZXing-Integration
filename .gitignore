@@ -1,0 +1,23 @@
+# Unity
+Library/
+Temp/
+obj/
+
+# IDE
+.vscode/
+.gradle/
+.vs/
+
+# NatDevice
+Assets/NatSuite/
+Assets/NatSuite.meta
+
+# OpenCV
+Assets/OpenCVForUnity/
+Assets/OpenCVForUnity.meta
+
+# Recordings
+recording_*
+
+# Misc
+.DS_Store
