@@ -5,7 +5,7 @@ This is an example project which integrates the NatDevice media device API with 
 
 ## Requirements
 - Unity 2019.2+
-- NatDevice 1.0.3+
+- NatDevice 1.1+
 
 ## Setup Instructions
 - Download and open the project in Unity.

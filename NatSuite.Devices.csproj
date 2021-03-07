@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ad3425ef-6323-b78d-decf-d7f5e457d364}</ProjectGuid>
+    <ProjectGuid>{31933355-6132-f6df-d761-2cec63c93fb1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>NatSuite.Devices</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -36,12 +36,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\NatSuite\Examples\HotMic\ClipRecorder.cs" />
-     <Compile Include="Assets\NatSuite\Examples\HotMic\HotMic.cs" />
-     <Compile Include="Assets\NatSuite\Examples\HotMic\MicrophoneButton.cs" />
-     <Compile Include="Assets\NatSuite\Examples\MiniCam\MiniCam.cs" />
-     <Compile Include="Assets\ScanCam.cs" />
-     <None Include="Assets\ZXing.NET\zxing.unity.xml" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\AudioDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\CameraDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\IAudioDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\ICameraDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\IMediaDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\Internal\Bridge.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\Internal\NativeAudioDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\Internal\NativeCameraDevice.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\MediaDeviceCriteria.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\MediaDevicePermissions.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\MediaDeviceQuery.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\MediaDeviceTypes.cs" />
+     <Compile Include="Assets\NatSuite\NatDevice\Runtime\WebCameraDevice.cs" />
+     <None Include="Assets\NatSuite\NatDevice\Runtime\NatSuite.Devices.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -218,6 +226,21 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="zxing.unity">
         <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Assets/ZXing.NET/zxing.unity.dll</HintPath>
@@ -573,93 +596,14 @@
     <Reference Include="mscorlib">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/yusuf/Documents/Projects/NatDevice-ZXing-Integration/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NatSuite.Devices.csproj">
-      <Project>{31933355-6132-f6df-d761-2cec63c93fb1}</Project>
-      <Name>NatSuite.Devices</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

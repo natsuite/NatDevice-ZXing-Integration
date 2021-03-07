@@ -12,10 +12,6 @@ obj/
 Assets/NatSuite/
 Assets/NatSuite.meta
 
-# OpenCV
-Assets/OpenCVForUnity/
-Assets/OpenCVForUnity.meta
-
 # Recordings
 recording_*
 

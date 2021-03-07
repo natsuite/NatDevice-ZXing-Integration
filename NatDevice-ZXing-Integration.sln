@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{ad3425ef-6323-b78d-decf-d7f5e457d364}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatSuite.Devices", "NatSuite.Devices.csproj", "{31933355-6132-f6df-d761-2cec63c93fb1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,6 +12,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ad3425ef-6323-b78d-decf-d7f5e457d364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ad3425ef-6323-b78d-decf-d7f5e457d364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31933355-6132-f6df-d761-2cec63c93fb1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31933355-6132-f6df-d761-2cec63c93fb1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
